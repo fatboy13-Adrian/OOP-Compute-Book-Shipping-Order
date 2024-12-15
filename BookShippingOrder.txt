@@ -1,0 +1,28 @@
+public class BookShippingOrder extends BookOrder
+{
+	private float shipping;
+		 //null constructor
+		 public BookShippingOrder()
+		 {
+			 super();
+			 shipping = 0.0f;
+		 }
+		 //overloaded constructor
+		 public BookShippingOrder(String q, String w, int e)
+		 {
+			 super(q, w, e);
+			 shipping = 15.0f;
+		 }
+		 public void setShipping(float s)
+		 {
+			 shipping = s;
+		 }
+		 public float getShipping()
+		 {
+			 return shipping;
+		 }
+		public float computeTotalPrice()
+		{
+			return super.computeTotalPrice() + shipping;
+		}
+	 }//end of class

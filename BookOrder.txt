@@ -1,0 +1,87 @@
+public class BookOrder
+{
+	private String title;
+	private String isbn;
+	private int quantity;
+	private float unitPrice;
+	
+	//null / default constructor
+	public BookOrder()
+	{
+		title = null;
+		isbn = null;
+		quantity = 0;
+		unitPrice = 0.0f;
+	}
+	
+	//overloaded constructor
+	public BookOrder(String s1, String s2, int p)
+	{
+		title = s1;
+		isbn = s2;
+		quantity = p;
+		unitPrice = 0.0f;
+	}
+
+	//get & set methods for each field
+	public void setTitle(String t)
+	{
+		title = t;
+	}
+	public String getTitle()
+	{
+		return title;
+	}
+	public void setIsbn(String i)
+	{
+		isbn = i;
+	}
+	public String getIsbn()
+	{
+		return isbn;
+	}
+	public void setQuantity(int q)
+	{
+		quantity = q;
+	}
+	public int getQuantity()
+	{
+		return quantity;
+	}
+	public void setUnitPrice(float up)
+	{
+		unitPrice = up;
+	}
+	public float getUnitPrice()
+	{
+		return unitPrice;
+	}
+	//method computeTotalPrice to compute the total price
+	public float computeTotalPrice()
+	{
+		float totalPrice;
+		totalPrice = (unitPrice * quantity);
+		return totalPrice;
+	}
+	//method to display the fields
+	public void displayDetails()
+	{
+		if(isbn == null)
+		{
+			System.out.println("UNKNOWN ISBN");
+		}
+		else
+		{
+			//display:
+			//total price by calling computeTotalPrice() method
+			//compute total price
+			System.out.println("ISBN: "+getIsbn());
+			System.out.println(" ");
+
+			System.out.println("Title: "+getTitle());
+			System.out.println("Quantity: "+getQuantity());
+			System.out.println("Unit Price: "+getUnitPrice());
+			System.out.println("Total Price: "+computeTotalPrice());
+		}
+	}
+}//end of class
